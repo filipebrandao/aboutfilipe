@@ -1,4 +1,4 @@
-baseURL = "http://aboutfilipe.com/"
+baseURL = "https://aboutfilipe.com/"
 languageCode = "en-us"
 title = "Filipe Brandão"
 theme = "cactus"
