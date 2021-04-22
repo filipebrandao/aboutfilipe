@@ -36,18 +36,6 @@
   {{ end }}
   </section>
 
-  <section id="work" class="content" >
-    <span class="h1">About my work</span>
-    {{ .Site.Data.me.work | markdownify }}
-  </section>
-  
-  <section id="hobbies">
-    <span class="h1">Hobbies</span>
-	<p>
-    {{ .Site.Data.me.hobbies | markdownify }}
-	</p>
-  </section>
-	
   {{ if .Site.Params.showWritingsOnHomepage }}
   <section id="writing">
     <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Writings</a></span>
