@@ -9,9 +9,11 @@ In case you haven't moved to Jetpack Compose yet and still rely on the `Recycler
 
 But I'm here to help :) 
 
+## The solution
+
 You can workaround this problem by implementing your own `LayoutManager`. Here's an example for a `RecyclerView` which displays a vertical list of items with dynamic height:
 
- ```
+ ```kotlin
  /**
  * Mimics LinearLayoutManager but adds reliable scroll Y offset calculation for RecyclerView list items with dynamic height.
  * The base implementation relies on the average list item height, which is unreliable, while this one stores the actual height of each item.
@@ -54,17 +56,17 @@ class ReliableScrollOffsetLinearLayoutManager(context: Context?) : LinearLayoutM
 ```
 
 This solution has been battle tested by me and considers paddings addded to the RecyclerView or through `ItemDecoration`. Just make sure assign this `LayoutManager` to your RecyclerView:
-```
+```kotlin
     recyclerView.layoutManager = ReliableScrollOffsetLinearLayoutManager(context)
 ```
 And call the `recalculateChildHeights()` method after you sort or update the list.
-```
+```kotlin
         val layoutManager = binding.resultsRv.layoutManager as ReliableScrollOffsetLinearLayoutManager
         layoutManager.recalculateChildHeights()
 ```
 To make sure you don't run into issues where you update the data backing up the `Adapter`, if needed, I recommend setting a callback that is triggered once the first `Adapter.onBindViewHolder()` is called. Here's the skeleton code for this idea:
 
-```
+```kotlin
 
 class MyListAdapter : ListAdapter<ListItemUIModel, RecyclerView.ViewHolder>(ListItemDiffCallback()) {
 
@@ -89,7 +91,7 @@ class MyListAdapter : ListAdapter<ListItemUIModel, RecyclerView.ViewHolder>(List
  ```
 And of course wire that `onUiUpdateCallback` to the `recalculateChildHeights()` method from our custom `LayoutManager` right before you update the data in the `Adapter` backing up the RecyclerView:
 
-```
+```kotlin
         myListAdapter.onUiUpdateCallback = {
                 // must recalculate scroll offset after sorting and after adding new items to the list before the current scroll position
                 (binding.resultsRv.layoutManager as ReliableScrollOffsetLinearLayoutManager).recalculateChildHeights() 
