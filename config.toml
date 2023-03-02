@@ -25,11 +25,6 @@ googleAnalytics = "G-GJN1PEHYM3"
  url = "/about"
  weight = 2
 
-[markup]
-  [markup.tableOfContents]
-    endLevel = 4
-    ordered = false
-    startLevel = 2
 
 [params]
   logo = "logo.webp"
@@ -73,6 +68,10 @@ googleAnalytics = "G-GJN1PEHYM3"
 
 
 [markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
