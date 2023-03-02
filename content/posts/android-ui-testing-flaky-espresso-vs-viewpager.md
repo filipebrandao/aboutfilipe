@@ -20,7 +20,7 @@ It was hard to find the root of the flakiness. But the fact that the failing tes
 
 I'm sharing this piece of kotlin code that should be part of the UI Testing Swiss Knife of Android devs.
 Registering this `ViewPager2IdlingResource` in the `IdleRegistry` will make sure that the test steps will only be executed once the ViewPager scroll is settled.
-```
+```kotlin
 class ViewPager2IdlingResource(viewPager: ViewPager2) : IdlingResource {  
   
     companion object {  
@@ -53,7 +53,7 @@ class ViewPager2IdlingResource(viewPager: ViewPager2) : IdlingResource {
 }
 ```
 Then just use it in the test code like this: 
-```
+```kotlin
 // before interacting with the ViewPager
 val viewPager2IdlingResource = ViewPager2IdlingResource(EspressoHelper.getCurrentActivity()!!.findViewById(R.id.viewPager))  
 IdlingRegistry.getInstance().register(viewPager2IdlingResource)
@@ -64,7 +64,7 @@ IdlingRegistry.getInstance().register(viewPager2IdlingResource)
 IdlingRegistry.getInstance().unregister(viewPager2IdlingResource)
 ```
 Here's the code for `EspressoHelper.getCurrentActivity()` which allows us to get the instance of the current Activity during the test execution: 
-```
+```kotlin
 fun getCurrentActivity(): Activity? {  
     var currentActivity: Activity? = null  
     getInstrumentation().runOnMainSync { run { currentActivity = ActivityLifecycleMonitorRegistry.getInstance().getActivitiesInStage(Stage.RESUMED).elementAtOrNull(0) } }  
