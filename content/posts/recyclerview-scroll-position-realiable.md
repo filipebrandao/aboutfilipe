@@ -61,8 +61,7 @@ This solution has been battle tested by me and considers paddings addded to the 
 ```
 And call the `recalculateChildHeights()` method after you sort or update the list.
 ```kotlin
-        val layoutManager = binding.resultsRv.layoutManager as ReliableScrollOffsetLinearLayoutManager
-        layoutManager.recalculateChildHeights()
+        (binding.resultsRv.layoutManager as ReliableScrollOffsetLinearLayoutManager).recalculateChildHeights()
 ```
 To make sure you don't run into issues where you update the data backing up the `Adapter`, if needed, I recommend setting a callback that is triggered once the first `Adapter.onBindViewHolder()` is called. Here's the skeleton code for this idea:
 
