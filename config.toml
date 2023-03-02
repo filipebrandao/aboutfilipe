@@ -25,11 +25,6 @@ googleAnalytics = "G-GJN1PEHYM3"
  url = "/about"
  weight = 2
 
-[markup]
-  [markup.tableOfContents]
-    endLevel = 4
-    ordered = false
-    startLevel = 2
 
 [params]
   logo = "logo.webp"
@@ -70,3 +65,24 @@ googleAnalytics = "G-GJN1PEHYM3"
   [[params.social]]
     name = "email"
     link = "filipebrandao90@gmail.com"  # no need for "mailto:" in the head
+
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
