@@ -4,8 +4,7 @@ title = "Filipe Brandão"
 theme = "cactus"
 # copyright = "You" # cactus will use title if copyright is not set
 # disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
-googleAnalytics = "G-8R7DQYLHY5"
-
+googleAnalytics = "G-8R7DQYLHY5" #not used. The one in params is used.
 
 # summaryLength = 2
 
@@ -27,6 +26,7 @@ googleAnalytics = "G-8R7DQYLHY5"
 
 
 [params]
+  googleAnalyticsID = "G-8R7DQYLHY5"
   logo = "logo.webp"
   colortheme = "dark" # dark, light, white, or classic
   # rss = true # generate rss feed. default value is false
