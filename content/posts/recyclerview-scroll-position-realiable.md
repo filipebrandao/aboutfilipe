@@ -99,6 +99,7 @@ And of course wire that `onUiUpdateCallback` to the `recalculateChildHeights()` 
         myListAdapter.submitList(listItems) 
 ```
 
+Done. Now you can just call `computeVerticalScrollOffset()` on the `LayoutManager` to get the scroll offset reliably.
 
 
 ## In summary
