@@ -12,7 +12,7 @@ I'm a passionate software engineer who's been coding for more than half of his l
     - 👬 I have worn many hats, also in non-technical ways, from mentoring coworkers to being assigned roles of leadership, which allowed me to code-centric tasks and build a larger set of skills.
   
   Check out my [LinkedIn](https://www.linkedin.com/in/filipebrandao90/) for more details.
-## Hobbies 
+## Other 
 Even though I initially present myself through my job and nationality, we all know that's only the tip of the iceberg of who someone really is. Or it should be. 
  
 > You are not your job, you're not how much money you have in the bank. You are not the car you drive. You're not the contents of your wallet. You are not your fucking khakis. You are all singing, all dancing crap of the world. 
